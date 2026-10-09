@@ -8,7 +8,6 @@ A fast, responsive personal portfolio built with plain HTML, CSS and JavaScript.
 - Light and dark themes (follows your system, with a toggle that's remembered)
 - Mobile-friendly navigation
 - Sections fade in as you scroll (turned off when the visitor's system asks for reduced motion)
-- Fetches and shows your latest public GitHub repos automatically
 
 ## Make it yours
 
@@ -27,4 +26,4 @@ python3 -m http.server 8000
 
 1. On GitHub, go to **Settings → Pages**.
 2. Under **Build and deployment**, choose **Deploy from a branch**, pick `main` and `/ (root)`, then save.
-3. Your site will be live at `https://harsha-raj-reddy.github.io/vibe-coding/` within a minute or two.
+3. The site will be live at the URL shown on that page within a minute or two.

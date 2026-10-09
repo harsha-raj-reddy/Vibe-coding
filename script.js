@@ -94,33 +94,14 @@
   const c = data.contact;
   const contactLinks = [];
   if (c.email) contactLinks.push(el("a", { href: `mailto:${c.email}`, class: "btn btn-primary", text: "Say hello ✉" }));
-  if (c.github) contactLinks.push(link(c.github, "GitHub", "btn btn-ghost"));
   if (c.linkedin) contactLinks.push(link(c.linkedin, "LinkedIn", "btn btn-ghost"));
   if (c.twitter) contactLinks.push(link(c.twitter, "X / Twitter", "btn btn-ghost"));
   $("contact-body").append(...contactLinks);
-
-  // ── Live GitHub repos (hidden if none or if the request fails) ──
-  if (data.githubUser) {
-    fetch(`https://api.github.com/users/${encodeURIComponent(data.githubUser)}/repos?sort=updated&per_page=6`)
-      .then((r) => (r.ok ? r.json() : []))
-      .then((repos) => {
-        const listed = new Set(data.projects.map((p) => (p.repo || "").toLowerCase()));
-        const fresh = repos.filter((r) => !r.fork && !listed.has(r.html_url.toLowerCase()));
-        if (!fresh.length) return;
-        $("github-body").append(
-          ...fresh.map((r) => {
-            const meta = [r.language, `★ ${r.stargazers_count}`].filter(Boolean).join("  ·  ");
-            return el("article", { class: "card" }, [
-              el("h3", { text: r.name }),
-              el("p", { text: r.description || "No description yet." }),
-              el("div", { class: "card-meta", text: meta }),
-              el("div", { class: "card-links", style: "margin-top:14px" }, [link(r.html_url, "View repo →")]),
-            ]);
-          })
-        );
-        $("github-wrap").hidden = false;
-      })
-      .catch(() => {});
+  if (!contactLinks.length) {
+    // Nothing to contact through yet: hide the section and links pointing at it.
+    $("contact").hidden = true;
+    $("hero-contact").hidden = true;
+    document.querySelector('.nav-links a[href="#contact"]').hidden = true;
   }
 
   // ── Theme toggle ──
