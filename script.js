@@ -25,6 +25,12 @@
   $("hero-role").textContent = data.role;
   $("hero-tagline").textContent = data.tagline;
   $("hero-location").textContent = data.location ? `📍 ${data.location}` : "";
+  if (data.photo) {
+    const img = $("hero-photo");
+    img.src = data.photo;
+    img.alt = `Photo of ${data.name}`;
+    img.hidden = false;
+  }
   $("badge").hidden = !data.available;
   $("footer-name").textContent = data.name;
   $("year").textContent = new Date().getFullYear();
@@ -59,10 +65,30 @@
       el("li", {}, [
         el("h3", {}, [document.createTextNode(`${x.title} · `), el("span", { class: "org", text: x.org })]),
         el("div", { class: "period", text: x.period }),
+        x.place ? el("div", { class: "place", text: x.place }) : null,
         el("p", { text: x.details }),
       ])
     )
   );
+
+  // ── Education & certifications ──
+  $("education-body").append(
+    ...(data.education || []).map((e) =>
+      el("article", { class: "card" }, [
+        el("div", { class: "edu-period", text: e.period }),
+        el("h3", { text: e.title }),
+        el("div", { class: "edu-org", text: e.org }),
+        e.details ? el("p", { text: e.details }) : null,
+      ])
+    )
+  );
+  const certs = data.certifications || [];
+  if (certs.length) {
+    $("certs-body").append(
+      ...certs.map((c) => el("li", {}, [el("strong", { text: c.title }), el("span", { text: `${c.issuer} · ${c.date}` })]))
+    );
+    $("certs-wrap").hidden = false;
+  }
 
   // ── Contact ──
   const c = data.contact;
