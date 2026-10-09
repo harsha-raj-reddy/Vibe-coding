@@ -20,16 +20,16 @@ window.PORTFOLIO = {
     Languages: ["Python", "Java", "PHP", "JavaScript", "SQL"],
     "Front-End": ["Vue.js", "Vite", "HTML", "CSS"],
     "Back-End & Data": ["Django", "API Development", "Back-End Web Development", "Oracle SQL"],
-    "Cloud & Tools": ["AWS", "AWS CloudFormation", "Git", "GitHub"],
+    "Cloud & Tools": ["AWS", "AWS CloudFormation", "Git"],
   },
 
   // Add your real projects here. Each needs a title and description; repo/live links are optional.
   projects: [
     {
       title: "Personal Portfolio",
-      description: "This site: a fast, responsive portfolio built with plain HTML, CSS and JavaScript, with light and dark themes and live GitHub integration.",
+      description: "This site: a fast, responsive portfolio built with plain HTML, CSS and JavaScript, with light and dark themes.",
       tags: ["HTML", "CSS", "JavaScript"],
-      repo: "https://github.com/harsha-raj-reddy/vibe-coding",
+      repo: "",
       live: "",
     },
   ],
@@ -87,11 +87,7 @@ window.PORTFOLIO = {
 
   contact: {
     email: "", // e.g. "you@example.com" (left blank so it isn't published until you choose)
-    github: "https://github.com/harsha-raj-reddy",
     linkedin: "", // paste your LinkedIn profile URL here
     twitter: "",
   },
-
-  // Also show your latest public GitHub repositories (fetched live).
-  githubUser: "harsha-raj-reddy",
 };
