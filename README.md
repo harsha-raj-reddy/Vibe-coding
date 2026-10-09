@@ -7,7 +7,7 @@ A fast, responsive personal portfolio built with plain HTML, CSS and JavaScript.
 - Sections for the hero, about, skills, projects, experience and contact
 - Light and dark themes (follows your system, with a toggle that's remembered)
 - Mobile-friendly navigation
-- Sections fade in as you scroll (turned off when the visitor's system asks for reduced motion)
+- Animated gradient background, typing role, photo ring with floating tech logos, count-up stats, GPA rings and scroll reveals (all motion turned off when the visitor asks for reduced motion)
 
 ## Make it yours
 
