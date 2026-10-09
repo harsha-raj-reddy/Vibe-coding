@@ -11,7 +11,7 @@ window.PORTFOLIO = {
   available: true, // shows an "Open to opportunities" badge
 
   about: [
-    "I'm a software engineer with 4+ years of industry experience, currently a Software Analyst at EY in Wealth & Asset Management, where I bridge business requirements and the systems that deliver them.",
+    "I'm a software engineer with nearly 4 years of industry experience, currently a Software Analyst at EY in Wealth & Asset Management, where I bridge business requirements and the systems that deliver them.",
     "Before EY, I built APIs and cloud infrastructure on AWS at Singular Analysts, worked on Vue.js and Django applications at Springer Capital, and spent nearly two years as a developer at ILI Technologies building Vue.js and Vite front-ends.",
     "I hold a Master of Science in Computer Science from The University of Texas at Arlington (3.8/4.0) and a B.Tech in Computer Science and Engineering from GITAM University.",
   ],
